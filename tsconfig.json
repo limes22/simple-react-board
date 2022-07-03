@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "typeRoots": [
+      "./@type"
+    ],
     "target": "es5",
     "module": "esnext",
     "strict": true,
