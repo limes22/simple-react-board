@@ -4,15 +4,27 @@ import "./App.css";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { moveEmitHelpers } from "typescript";
+import ReactHtmlParser from 'node-html-parser';
 
+interface movieContent {
+  movieContent: {title? : any, content?: any},
+}
 
-function App() {
+interface viewContent {
+  movieContent: movieContent[],
+}
+
+export function App()  {
+
   const [movieContent, setMovieContent] = useState({
-    title: "",
-    content: "",
+    title:"",
+    content:""
   });
 
-  const [viewContent, setViewContent] = useState([]);
+  const [viewContent, setViewContent] = useState({
+    title:"",
+    content:""
+  });
 
   const getValue = (e: any) => {
     const { name, value } = e.target;
@@ -27,11 +39,11 @@ function App() {
     <div className="App">
       <h1>Movie Review</h1>
       <div className="movie-container">
-        {/* {viewContent.map(element =>
+        {/* {viewContent.map((element : any) =>
           <div>
             <h2>{element.title}</h2>
             <div>
-              {element.content}
+              {ReactHtmlParser(element.content)}
             </div>
           </div>)} */}
         <h2>제목</h2>
@@ -71,11 +83,14 @@ function App() {
       </div>
       <button
         className="submit-button"
+        // onClick={() => {
+        //   setViewContent(viewContent.concat({ ...movieContent }));
+        // }}
       >
         입력
       </button>
     </div>
   );
-}
+};
 
 export default App;
