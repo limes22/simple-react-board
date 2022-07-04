@@ -3,28 +3,17 @@ import { useState } from "react";
 import "./App.css";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import { moveEmitHelpers } from "typescript";
 import ReactHtmlParser from 'node-html-parser';
-
-interface movieContent {
-  movieContent: {title? : any, content?: any},
-}
-
-interface viewContent {
-  movieContent: movieContent[],
-}
+import { ContextPluginInterface } from "@ckeditor/ckeditor5-core/src/contextplugin";
 
 export function App()  {
 
-  const [movieContent, setMovieContent] = useState({
-    title:"",
-    content:""
+  const [movieContent, setMovieContent] = useState<any>({
+    title: "",
+    content: ""
   });
 
-  const [viewContent, setViewContent] = useState({
-    title:"",
-    content:""
-  });
+  const [viewContent, setViewContent] = useState<any>([]);
 
   const getValue = (e: any) => {
     const { name, value } = e.target;
@@ -39,13 +28,13 @@ export function App()  {
     <div className="App">
       <h1>Movie Review</h1>
       <div className="movie-container">
-        {/* {viewContent.map((element : any) =>
+        {viewContent.map((element : any) =>
           <div>
             <h2>{element.title}</h2>
             <div>
-              {ReactHtmlParser(element.content)}
+              {/* {ReactHtmlParser(element.content)} */}
             </div>
-          </div>)} */}
+          </div>)}
         <h2>제목</h2>
         <div>내용</div>
       </div>
@@ -83,9 +72,9 @@ export function App()  {
       </div>
       <button
         className="submit-button"
-        // onClick={() => {
-        //   setViewContent(viewContent.concat({ ...movieContent }));
-        // }}
+        onClick={() => {
+          setViewContent(viewContent.concat({ ...movieContent }));
+        }}
       >
         입력
       </button>
