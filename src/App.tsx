@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./App.css";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import ReactHtmlParser from 'node-html-parser';
+import ReactHtmlParser from 'react-html-parser';
 import { ContextPluginInterface } from "@ckeditor/ckeditor5-core/src/contextplugin";
 
 export function App()  {
@@ -32,7 +32,7 @@ export function App()  {
           <div>
             <h2>{element.title}</h2>
             <div>
-              {/* {ReactHtmlParser(element.content)} */}
+              {ReactHtmlParser(element.content)}
             </div>
           </div>)}
         <h2>제목</h2>
