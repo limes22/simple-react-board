@@ -13,19 +13,18 @@ export const List = ({ viewContent, setViewCurrent }: ListProps) => {
       <h1>Movie Review</h1>
       <div className="movie-container">
         {viewContent.map((element: any, idx: number) => (
-          //   <Fragment key={idx}>
-          <div>
-            <h2
-              key={idx}
-              onClick={() => {
-                setViewCurrent(viewContent.concat({ ...viewContent }));
-              }}
-            >
-              {element.title}
-            </h2>
-            {/* <div>{ReactHtmlParser(element.content)}</div> */}
-          </div>
-          //   </Fragment>
+          <Fragment key={idx}>
+            <div>
+              <h2
+                onClick={() => {
+                  setViewCurrent(viewContent.concat({ ...viewContent }));
+                }}
+              >
+                {element.title}
+              </h2>
+              {/* <div>{ReactHtmlParser(element.content)}</div> */}
+            </div>
+          </Fragment>
         ))}
         <h2>제목</h2>
         {/* <div>내용</div> */}

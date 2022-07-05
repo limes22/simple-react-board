@@ -16,7 +16,7 @@ export const Current = ({ viewCurrent }: CurrentProps) => {
       <div>내용</div>
       {viewCurrent.map((element: any, idx: number) => (
           <div>
-            <div key={idx}>{ReactHtmlParser(element.content)}</div>
+            <div>{ReactHtmlParser(element.content)}</div>
           </div>
       ))}
     </>
