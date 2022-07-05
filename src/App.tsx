@@ -8,7 +8,7 @@ import Current from "./movieReview/Current";
 export const App: React.FC = () => {
   const [viewContent, setViewContent] = useState<any>([]);
   const [viewCurrent, setViewCurrent] = useState<any>([]);
-  const [isshow, setisShow] = React.useState(true);
+  const [isshow, setisShow] = React.useState(false);
   const myOnClick = () => {
     setisShow(!isshow);
   };
