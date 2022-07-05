@@ -12,21 +12,22 @@ export const List = ({ viewContent, setViewCurrent }: ListProps) => {
     <>
       <h1>Movie Review</h1>
       <div className="movie-container">
-        {viewContent.map((element: any, idx: number) => (
-          <Fragment key={idx}>
-            <div>
-              <h2
-                onClick={() => {
-                  setViewCurrent(viewContent.concat({ ...viewContent }));
-                }}
-              >
-                {element.title}
-              </h2>
-              {/* <div>{ReactHtmlParser(element.content)}</div> */}
-            </div>
-          </Fragment>
-        ))}
         <h2>제목</h2>
+        {viewContent.map((element: any, idx: number) => (
+          //   <Fragment key={idx}>
+          <div key={idx}>
+            <h2 
+              onClick={() => {
+                setViewCurrent(element);
+              }}
+            >
+              {element.title}
+            </h2>
+            {/* <div>{ReactHtmlParser(element.content)}</div> */}
+          </div>
+          //   </Fragment>
+        ))}
+
         {/* <div>내용</div> */}
       </div>
     </>
