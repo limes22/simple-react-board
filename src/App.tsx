@@ -8,16 +8,12 @@ import Current from "./movieReview/Current";
 export const App: React.FC = () => {
   const [viewContent, setViewContent] = useState<any>([]);
   const [viewCurrent, setViewCurrent] = useState<any>([]);
-  const [isshow, setisShow] = React.useState(false);
-  const myOnClick = () => {
-    setisShow(!isshow);
-  };
+
   return (
     <>
       <div className="App">
-        <List viewContent={viewContent} setViewCurrent={setViewCurrent} viewCurrent={viewCurrent} myOnClick={myOnClick}/>
-        {isshow? <Current viewContent={viewContent}/> : null}
-        {/* <button onClick={myOnClick}>on/off</button> */}
+        <List viewContent={viewContent}  setViewCurrent={setViewCurrent}  />
+        <Current viewCurrent={viewCurrent}/>
         <Create setViewContent={setViewContent} viewContent={viewContent} />
       </div>
     </>

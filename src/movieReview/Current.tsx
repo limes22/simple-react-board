@@ -6,20 +6,18 @@ import ReactHtmlParser from "react-html-parser";
 import { ContextPluginInterface } from "@ckeditor/ckeditor5-core/src/contextplugin";
 
 interface CurrentProps {
-  viewContent: any;
+  viewCurrent: any;
 }
 
-export const Current = ({ viewContent }: CurrentProps) => {
+export const Current = ({ viewCurrent }: CurrentProps) => {
   
   return (
     <>
       <div>내용</div>
-      {viewContent.map((element: any, idx: any) => (
-        <Fragment key={idx}>
+      {viewCurrent.map((element: any, idx: number) => (
           <div>
-            <div>{ReactHtmlParser(element.content)}</div>
+            <div key={idx}>{ReactHtmlParser(element.content)}</div>
           </div>
-        </Fragment>
       ))}
     </>
   );
