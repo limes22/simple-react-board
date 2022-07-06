@@ -9,13 +9,13 @@ interface ListProps {
 export const List = ({ viewContent, setViewCurrent}: ListProps) => {
     const [count, setCount] = useState(0);
 
-    const myOnClick = (element: any) => {
-        if (count % 2 === 0 ) {
-            setViewCurrent(element)
+    const myOnClick = (element: any, idx=Number) => {
+        if (count % 2 === 1) {
+            setViewCurrent('');
         } else {
-            setViewCurrent('')
+            setViewCurrent(element);
         }
-        setCount(count + 1)
+        setCount(count + 1);
     };
     return (
         <>
