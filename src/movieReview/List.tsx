@@ -2,17 +2,22 @@ import React, { Fragment } from "react";
 
 interface ListProps {
   viewContent: any;
+  viewCurrent: any;
   setViewCurrent: Function;
-  setShow: Function;
-  isShow: boolean;
 }
 
 export const List = ({
   viewContent,
+  viewCurrent,
   setViewCurrent,
-  setShow,
-  isShow,
 }: ListProps) => {
+  const onClickFunc = (content) => {
+      if (content === viewCurrent) {
+          setViewCurrent(undefined);
+      } else {
+          setViewCurrent(content);
+      }
+  };
   return (
     <>
       <h1>Movie Review</h1>
@@ -21,20 +26,12 @@ export const List = ({
         {viewContent.map((element: any, idx: number) => (
           <Fragment key={idx}>
             <div>
-              <h2
-                onClick={() => {
-                  setViewCurrent(element);
-                  setShow(!isShow);
-                }}
-              >
+              <h2 onClick={() => onClickFunc(element)}>
                 {element.title}
               </h2>
-              {/* <div>{ReactHtmlParser(element.content)}</div> */}
             </div>
           </Fragment>
         ))}
-
-        {/* <div>내용</div> */}
       </div>
     </>
   );

@@ -7,14 +7,13 @@ import Current from "./movieReview/Current";
 
 export const App: React.FC = () => {
   const [viewContent, setViewContent] = useState<any>([]);
-  const [viewCurrent, setViewCurrent] = useState<any>([]);
-  const [isShow, setShow] = useState(false);
+  const [viewCurrent, setViewCurrent] = useState<any>(undefined);
 
   return (
     <>
       <div className="App">
-        <List viewContent={viewContent}  setViewCurrent={setViewCurrent} setShow={setShow} isShow={isShow}/>
-        {isShow === true? <Current viewCurrent={viewCurrent} /> : null}
+        <List viewContent={viewContent}  viewCurrent={viewCurrent} setViewCurrent={setViewCurrent} />
+        {viewCurrent? <Current viewCurrent={viewCurrent} /> : null}
         <Create setViewContent={setViewContent} viewContent={viewContent} />
       </div>
     </>
