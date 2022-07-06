@@ -1,18 +1,17 @@
-import React, { Fragment, useEffect } from "react";
+import React from "react";
 import ReactHtmlParser from "react-html-parser";
 
 interface CurrentProps {
   viewCurrent: any;
 }
 
-export const Current = ({ viewCurrent}: CurrentProps) => {
- 
+export const Current = ({ viewCurrent }: CurrentProps) => {
   return (
     <>
-      <div>내용</div>  
-          <div>
-            <div>{ReactHtmlParser(viewCurrent.content)}</div>
-          </div>
+      <div>내용</div>
+      <div>
+        <div>{ReactHtmlParser(viewCurrent.content)}</div>
+      </div>
     </>
   );
 };
