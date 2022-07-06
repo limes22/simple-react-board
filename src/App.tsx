@@ -13,7 +13,7 @@ export const App: React.FC = () => {
     <>
       <div className="App">
         <List viewContent={viewContent}  setViewCurrent={setViewCurrent}  />
-        <Current viewCurrent={viewCurrent} setViewCurrent={setViewCurrent}/>
+        <Current viewCurrent={viewCurrent} /> 
         <Create setViewContent={setViewContent} viewContent={viewContent} />
       </div>
     </>
