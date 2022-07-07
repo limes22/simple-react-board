@@ -6,7 +6,7 @@ import List from "./movieReview/List";
 import Current from "./movieReview/Current";
 import axios from "axios";
 
-export const App: React.FC = () => {
+const App: React.FC = () => {
   const [viewContent, setViewContent] = useState<any>([]);
   const [viewCurrent, setViewCurrent] = useState<any>(undefined);
 

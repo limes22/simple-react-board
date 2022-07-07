@@ -9,7 +9,7 @@ interface CreateProps {
   viewContent: any;
 }
 
-export const Create = ({ setViewContent, viewContent }: CreateProps) => {
+const Create = ({ setViewContent, viewContent }: CreateProps) => {
   const [movieContent, setMovieContent] = useState<any>({
     title: "",
     body: "",

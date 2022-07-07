@@ -6,7 +6,7 @@ interface ListProps {
   setViewCurrent: Function;
 }
 
-export const List = ({
+const List = ({
   viewContent,
   viewCurrent,
   setViewCurrent,
