@@ -11,11 +11,11 @@ export const List = ({
   viewCurrent,
   setViewCurrent,
 }: ListProps) => {
-  const onClickFunc = (content) => {
-      if (content === viewCurrent) {
+  const onClickFunc = (body : any) => {
+      if (body === viewCurrent) {
           setViewCurrent(undefined);
       } else {
-          setViewCurrent(content);
+          setViewCurrent(body);
       }
   };
   return (

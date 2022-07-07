@@ -5,12 +5,12 @@ interface CurrentProps {
   viewCurrent: any;
 }
 
-export const Current = ({ viewCurrent }: CurrentProps) => {
+const Current = ({ viewCurrent }: CurrentProps) => {
   return (
     <>
       <div>내용</div>
       <div>
-        <div>{ReactHtmlParser(viewCurrent.content)}</div>
+        <div>{ReactHtmlParser(viewCurrent.body)}</div>
       </div>
     </>
   );

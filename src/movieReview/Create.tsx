@@ -12,7 +12,7 @@ interface CreateProps {
 export const Create = ({ setViewContent, viewContent }: CreateProps) => {
   const [movieContent, setMovieContent] = useState<any>({
     title: "",
-    content: "",
+    body: "",
   });
 
   const getValue = (e: any) => {
@@ -46,7 +46,7 @@ export const Create = ({ setViewContent, viewContent }: CreateProps) => {
             console.log({ event, editor, data });
             setMovieContent({
               ...movieContent,
-              content: data,
+              body: data,
             });
             console.log(movieContent);
           }}
